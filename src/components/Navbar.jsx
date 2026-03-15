@@ -5,10 +5,9 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-left">
         <div className="brand-badge">
-          Aswin A
+          ARIAN GRAND / UX DESIGNER
         </div>
       </div>
-      
       <div className="nav-right">
         <a href="#portfolio" className="nav-btn">PORTFOLIO</a>
         <a href="#about" className="nav-btn">ABOUT</a>

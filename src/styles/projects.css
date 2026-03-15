@@ -1,0 +1,240 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.header-title h4 {
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.badge {
+  background: var(--bg-paper);
+  padding: 0.2rem 1rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: 2px solid var(--border-retro);
+}
+
+/* GitHub Feed */
+.github-feed {
+  background: var(--card-paper);
+}
+
+.repo-list {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.repo-item {
+  padding: 1rem;
+  border: 2px solid var(--border-retro);
+  border-radius: 10px;
+  transition: var(--transition);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background: var(--bg-paper);
+  box-shadow: 3px 3px 0 var(--border-retro);
+}
+
+.repo-item:hover {
+  border-color: var(--accent-retro);
+  background: #fdf0e0;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--accent-retro);
+}
+
+.repo-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.repo-item h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-retro);
+}
+
+.lang-dot {
+  font-size: 0.7rem;
+  color: var(--ink-light);
+  font-weight: 600;
+}
+
+.repo-item p {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Graphic Design Mockup */
+.design-mockup {
+  background: linear-gradient(145deg, #3a2c1b, #5e4b38);
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  color: #fffef7;
+  border: 2px solid #d9c8b2;
+}
+
+.design-mockup .card-overlay {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 5;
+}
+
+.design-mockup .header-title.white {
+  color: #fffef7;
+}
+
+.design-mockup .subtitle {
+  color: rgba(255, 254, 247, 0.8);
+  font-size: 0.8rem;
+}
+
+.aesthetic-grid {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 80%;
+  height: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  transform: rotate(-5deg);
+}
+
+.g-box {
+  background: rgba(255, 254, 247, 0.15);
+  border: 2px solid rgba(255, 254, 247, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.g-1 {
+  grid-column: span 2;
+  background: linear-gradient(90deg, #b85e3a, #e6a15e);
+  opacity: 0.9;
+}
+
+.g-2 {
+  background: #8ab3b5;
+  opacity: 0.8;
+}
+
+.g-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.g-circle {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  border: 4px solid #e6b87e;
+}
+
+/* 3D Art Mockup */
+.col-3-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.trid-mockup {
+  background: #f0e5d5;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--border-retro);
+}
+
+.trid-mockup .card-overlay {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 5;
+}
+
+.trid-mockup .header-title.dark {
+  color: var(--ink);
+}
+
+.trid-mockup .subtitle.dark {
+  color: var(--ink-light);
+  font-size: 0.8rem;
+}
+
+.shapes-container {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 60%;
+  height: 60%;
+}
+
+.shape {
+  position: absolute;
+  background: #fffef7;
+  box-shadow: 6px 6px 0 rgba(58, 44, 27, 0.2);
+  border: 2px solid var(--border-retro);
+}
+
+.cube {
+  width: 70px;
+  height: 70px;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(145deg, #fffef7, #f0e5d5);
+  border-radius: 8px;
+  transform: rotate(15deg);
+  z-index: 3;
+}
+
+.sphere {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  bottom: 30px;
+  right: 50px;
+  background: radial-gradient(circle at 30% 30%, #fffef7, #dac0a1);
+  z-index: 2;
+}
+
+.cylinder {
+  width: 45px;
+  height: 110px;
+  border-radius: 40%;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(90deg, #e0cdb0, #fcf3e0, #cbb392);
+  transform: rotate(-20deg);
+  z-index: 1;
+}

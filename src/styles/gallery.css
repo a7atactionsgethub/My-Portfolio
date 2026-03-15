@@ -1,0 +1,124 @@
+/* ===== 3D Art Gallery Page – Polished Puzzle Layout ===== */
+.back-row {
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-retro);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid var(--accent-retro);
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  background: var(--card-paper);
+  box-shadow: 8px 8px 0 rgba(58,44,27,0.15);
+  transition: var(--transition);
+}
+
+.back-button:hover {
+  background: var(--accent-retro-soft);
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0 var(--accent-retro);
+}
+
+.page-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--ink);
+  text-shadow: 3px 3px 0 var(--border-retro);
+  line-height: 1.2;
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.art-card {
+  background: var(--card-paper);
+  border: 2px solid var(--border-retro);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 8px 8px 0 rgba(58,44,27,0.15);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.art-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 12px 12px 0 rgba(58,44,27,0.2);
+}
+
+/* Image container – consistent aspect ratio */
+.art-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;  /* Change this to 1/1, 16/9, etc. if you prefer */
+  object-fit: cover;
+  border: 2px solid var(--border-retro);
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  background: var(--bg-paper);
+  transition: transform 0.3s ease;
+}
+
+.art-card:hover .art-image {
+  transform: scale(1.02);
+}
+
+.art-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: var(--ink);
+}
+
+.art-card p {
+  color: var(--ink-light);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Size modifiers – allow cards to span multiple columns */
+.grid-large {
+  grid-column: span 2;
+}
+.grid-wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .puzzle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-large,
+  .grid-wide {
+    grid-column: span 2;
+  }
+  .page-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .puzzle-grid {
+    grid-template-columns: 1fr;
+  }
+  .grid-large,
+  .grid-wide {
+    grid-column: span 1;
+  }
+  .back-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
+  }
+  .page-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}

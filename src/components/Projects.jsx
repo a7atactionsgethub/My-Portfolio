@@ -1,5 +1,6 @@
 import React from 'react';
 import { Download, Github, Box, Palette, TerminalSquare } from 'lucide-react';
+import { Link } from 'react-router-dom'; // <-- import Link
 
 const Projects = ({ column }) => {
   if (column === 1) {
@@ -59,25 +60,27 @@ const Projects = ({ column }) => {
     );
   }
 
-  // Column 3 - 3D Art Showcase
+  // Column 3 - 3D Art Showcase (now clickable)
   return (
     <div className="col-3-projects">
-      <div className="bento-card trid-mockup">
-        <div className="card-overlay">
-          <div className="header-title dark">
-            <Box size={18} />
-            <h4>3D Art</h4>
+      <Link to="/3d-art" style={{ textDecoration: 'none' }}>
+        <div className="bento-card trid-mockup">
+          <div className="card-overlay">
+            <div className="header-title dark">
+              <Box size={18} />
+              <h4>3D Art</h4>
+            </div>
+            <p className="subtitle dark">Modeling & Renders</p>
           </div>
-          <p className="subtitle dark">Modeling & Renders</p>
+          
+          {/* Abstract representation of 3D forms */}
+          <div className="shapes-container">
+            <div className="shape cube"></div>
+            <div className="shape sphere"></div>
+            <div className="shape cylinder"></div>
+          </div>
         </div>
-        
-        {/* Abstract representation of 3D forms */}
-        <div className="shapes-container">
-          <div className="shape cube"></div>
-          <div className="shape sphere"></div>
-          <div className="shape cylinder"></div>
-        </div>
-      </div>
+      </Link>
     </div>
   );
 };

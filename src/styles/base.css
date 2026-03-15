@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --bg-paper: #fdf6e3;
+  --card-paper: #fffef7;
+  --ink: #3a2c1b;
+  --ink-light: #6b4f3a;
+  --accent-retro: #b85e3a;
+  --accent-retro-soft: #f4d6b6;
+  --border-retro: #d9c8b2;
+  --shadow-retro: 8px 8px 0 rgba(58, 44, 27, 0.1);
+  --radius: 12px;
+  --transition: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  background-color: var(--bg-paper);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  background-image: 
+    radial-gradient(circle at 30% 40%, rgba(0,0,0,0.02) 0%, transparent 20%),
+    radial-gradient(circle at 70% 80%, rgba(0,0,0,0.02) 0%, transparent 20%);
+}
+
+/* ===== Full‑Width Wrapper ===== */
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .app-wrapper {
+    padding: 2rem 3rem;
+  }
+}
+
+/* ===== Bento Grid ===== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: 1.3fr 1fr 1fr;
+  }
+}
+
+.bento-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ===== Cards ===== */
+.bento-card {
+  background: var(--card-paper);
+  border-radius: var(--radius);
+  border: 2px solid var(--border-retro);
+  box-shadow: var(--shadow-retro);
+  transition: var(--transition);
+  overflow: hidden;
+  position: relative;
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 1px dashed var(--border-retro);
+  border-radius: calc(var(--radius) - 4px);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.bento-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 12px 12px 0 rgba(58, 44, 27, 0.15);
+}
+
+.bento-card.no-padding {
+  padding: 0;
+}
+
+.bento-card > :not(.no-padding-child) {
+  padding: 1.5rem;
+}
+
+/* ===== Utility ===== */
+.fade-in {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -23,46 +23,6 @@ const About = () => {
       <button className="btn-secondary">
         View My Work <ArrowUpRight size={18} />
       </button>
-
-      <style jsx="true">{`
-        .about-stack {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-
-        .bio-box {
-          background: transparent;
-          border: none;
-        }
-
-        .bio-header {
-          margin-bottom: 0.5rem;
-        }
-
-        .badge-blue {
-          background: #E8EFFF;
-          color: var(--accent-blue);
-          padding: 0.2rem 0.6rem;
-          border-radius: 4px;
-          font-size: 0.75rem;
-          font-weight: 600;
-          display: inline-block;
-        }
-
-        .bio-content-wrapper {
-          border: 1px solid var(--accent-blue);
-          padding: 1rem;
-          background: var(--card-bg);
-        }
-
-        .bio-text {
-          color: var(--accent-blue);
-          font-size: 0.85rem;
-          line-height: 1.4;
-          font-weight: 500;
-        }
-      `}</style>
     </div>
   );
 };

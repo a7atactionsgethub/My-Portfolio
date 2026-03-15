@@ -34,57 +34,6 @@ const Skills = () => {
           </div>
         ))}
       </div>
-
-      <style jsx="true">{`
-        .skills-container {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-        }
-
-        .section-title {
-          font-size: 1.1rem;
-          font-weight: 600;
-          margin-bottom: 1.5rem;
-        }
-
-        .categories-stack {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-
-        .cat-title {
-          font-size: 0.8rem;
-          color: var(--text-secondary);
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          margin-bottom: 0.8rem;
-          font-weight: 600;
-        }
-
-        .tags-grid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-        }
-
-        .skill-tag {
-          border: 1px solid var(--border-color);
-          padding: 0.3rem 0.8rem;
-          border-radius: 20px;
-          font-size: 0.75rem;
-          font-weight: 500;
-          color: var(--text-primary);
-          background: var(--bg-color);
-          transition: var(--transition);
-        }
-
-        .skill-tag:hover {
-          border-color: var(--text-primary);
-          background: var(--card-bg);
-        }
-      `}</style>
     </div>
   );
 };

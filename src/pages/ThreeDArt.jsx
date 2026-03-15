@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import manhole from '../assets/3dassests/ManHole.png';      // your real image
-import escape from '../assets/3dassests/Escape.png';        // your second image
+import manhole from '../assets/3dassets/ManHole.png';      // your real image
+import escape from '../assets/3dassets/Escape.png';        // your second image
 
 const ThreeDArt = () => {
   const artworks = [

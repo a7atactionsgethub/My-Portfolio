@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import profilePic from '../assets/profile.jpg';  // Adjust path if needed
 
 const Hero = () => {
@@ -10,13 +11,15 @@ const Hero = () => {
       
       <div className="hero-content">
         <div className="avatar">
-          <img src={profilePic} alt="Arian" />
+          <img src={profilePic} alt="Aswin" />
         </div>
         
         <div className="role-tags">
-          <span className="pill dark">IT Student</span>
-          <span className="pill outline">Graphic Designer</span>
-          <span className="pill outline">3D Artist</span>
+          <Link to="/graphic-design" className="pill dark">Photoshop</Link>
+          <Link to="/graphic-design" className="pill outline">Graphic Designer</Link>
+          <Link to="/video-editing" className="pill outline">Video Editor</Link>
+          <Link to="/coding" className="pill outline">Coder</Link>
+          <Link to="/3d-art" className="pill outline">3D Artist</Link>
         </div>
 
         <h1 className="hero-title">

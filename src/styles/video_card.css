@@ -1,0 +1,39 @@
+/* Video Editing Mockup in Projects */
+.video-mockup {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  min-height: 250px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  border: 2px solid #0f3460;
+}
+
+.video-visualizer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.video-visualizer .bar {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px 4px 0 0;
+}
+
+.b1 { height: 60%; animation: pulse 1.5s infinite ease-in-out; }
+.b2 { height: 80%; animation: pulse 2s infinite ease-in-out; }
+.b3 { height: 40%; animation: pulse 1.2s infinite ease-in-out; }
+.b4 { height: 70%; animation: pulse 1.8s infinite ease-in-out; }
+
+@keyframes pulse {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.7); }
+}

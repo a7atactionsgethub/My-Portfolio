@@ -34,17 +34,23 @@ body {
 /* ===== Full‑Width Wrapper ===== */
 .app-wrapper {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   padding: 1.5rem;
+  overflow: hidden;
+  gap: 1.5rem;
 }
 
 @media (min-width: 1024px) {
   .app-wrapper {
-    padding: 2rem 3rem;
+    padding: 1rem 2rem;
   }
+}
+
+.bento-grid {
+  flex: 1;
+  min-height: 0;
 }
 
 /* ===== Bento Grid ===== */

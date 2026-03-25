@@ -1,7 +1,8 @@
 /* Video Editing Mockup in Projects */
 .video-mockup {
   background: linear-gradient(135deg, #1a1a2e, #16213e);
-  min-height: 250px;
+  flex: 1; /* Stretch */
+  min-height: 100px;
   position: relative;
   overflow: hidden;
   color: #fff;

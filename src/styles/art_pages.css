@@ -94,9 +94,17 @@
 }
 
 /* Specific page variations */
-.video-placeholder { background: linear-gradient(45deg, #1a1a2e, #16213e); }
-.design-placeholder { background: linear-gradient(45deg, #3a2c1b, #5e4b38); }
-.code-placeholder { background: linear-gradient(45deg, #0f2027, #203a43, #2c5364); }
+.video-placeholder {
+  background: linear-gradient(45deg, #1a1a2e, #16213e);
+}
+
+.design-placeholder {
+  background: linear-gradient(45deg, #3a2c1b, #5e4b38);
+}
+
+.code-placeholder {
+  background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+}
 
 .video-stats {
   position: absolute;
@@ -108,68 +116,160 @@
 
 .video-stats span {
   font-size: 0.6rem;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 2px 6px;
   border-radius: 4px;
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Sections */
-.workflow-section, .skillset-visualizer, .tech-stack-section {
-  padding: 3rem;
-  background: var(--card-paper);
-  border: 4px solid var(--border-retro);
-  border-radius: 20px;
-  box-shadow: 10px 10px 0 rgba(0,0,0,0.05);
+/* Subpage Bento Layouts */
+.subpage-layout {
+  padding-bottom: 2rem !important;
+  /* Avoid overlap with footer */
 }
 
-.workflow-section h2, .skillset-visualizer h2, .tech-stack-section h2 {
-  font-size: 1.5rem;
-  font-weight: 900;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.workflow-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.workflow-step {
-  text-align: center;
+.subpage-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
-.workflow-step h4 {
-  font-size: 1.1rem;
-  font-weight: 800;
-}
-
-.workflow-step p {
-  font-size: 0.85rem;
-  color: var(--ink-light);
-}
-
-.skill-blocks, .tech-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.skill-block, .tech-pill {
+.back-btn-float {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: var(--bg-paper);
+  padding: 0.6rem 1.2rem;
+  background: var(--card-paper);
   border: 2px solid var(--border-retro);
   border-radius: 50px;
+  color: var(--ink);
+  text-decoration: none;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--border-retro);
+  transition: var(--transition);
+}
+
+.back-btn-float:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--accent-retro);
+  border-color: var(--accent-retro);
+}
+
+.design-bg {
+  background: linear-gradient(135deg, #f4d6b6, #b85e3a);
+}
+
+.video-bg {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.code-bg {
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+}
+
+.writing-bg {
+  background: linear-gradient(135deg, #ecd9c9, #6b4f3a);
+}
+
+.subpage-hero {
+  min-height: 180px;
+}
+
+.skill-blocks-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.video-placeholder-main {
+  height: 200px;
+  background: #000;
+  position: relative;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Repository cards */
+.clickable-repo {
+  padding: 1.5rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.repo-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.repo-footer {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-retro);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Home Page Writing Card */
+.writing-mini-card {
+  background: linear-gradient(135deg, #443224, #2a1f16);
+  flex: 1;
+  /* Stretch */
+  min-height: 120px;
+  color: #fffef7;
+}
+
+.writing-mini-card h4,
+.writing-mini-card .subtitle {
+  color: #fffef7 !important;
+}
+
+.writing-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.writing-lines .line {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.l1 {
+  width: 80%;
+}
+
+.l2 {
+  width: 60%;
+}
+
+.l3 {
+  width: 90%;
 }

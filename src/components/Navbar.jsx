@@ -1,21 +1,30 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="navbar">
-      <div className="nav-left">
-        <div className="brand-badge">
-          ASWIN A
+    <nav className={`nav-container ${scrolled ? 'nav-scrolled' : ''}`}>
+      <div className="container nav-inner">
+        <NavLink to="/" className="logo-brand">
+          ASWIN<span style={{ color: '#3b82f6' }}>.</span>
+        </NavLink>
+        <div className="nav-menu">
+           <NavLink to="/" className="nav-link">Home</NavLink>
+           <a href="#projects" className="nav-link">Projects</a>
+           <a href="#3d-art" className="nav-link">3D Art</a>
+           <a href="#skills" className="nav-link">Skills</a>
+           <a href="#contact" className="nav-link">Contact</a>
         </div>
-      </div>
-      <div className="nav-right">
-        <Link to="/" className="nav-btn">HOME</Link>
-        <Link to="/graphic-design" className="nav-btn">GRAPHIC DESIGN</Link>
-        <Link to="/video-editing" className="nav-btn">VIDEO EDITING</Link>
-        <Link to="/coding" className="nav-btn">CODING</Link>
-        <Link to="/3d-art" className="nav-btn">3D ART</Link>
-        <a href="#contact" className="nav-btn">CONTACT</a>
       </div>
     </nav>
   );

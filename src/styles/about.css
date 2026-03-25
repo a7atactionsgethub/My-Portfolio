@@ -1,71 +1,62 @@
-.about-stack {
+/* ===== About / Column 2 Top Section ===== */
+.about-col2 {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  flex: 0 0 auto !important;
 }
 
-.bio-box {
-  background: transparent;
-  border: none;
-  box-shadow: none;
+.bio-card-proper {
+  padding: 1.5rem 1.25rem 1.25rem 1.25rem;
+  background: var(--card-paper);
 }
 
-.bio-box::before {
-  display: none;
-}
-
-.bio-header {
-  margin-bottom: 0.5rem;
-  padding: 0 1.5rem;
-}
-
-.badge-blue {
-  background: var(--accent-retro-soft);
+.bio-card-tab {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  background: var(--bg-paper);
   color: var(--accent-retro);
-  padding: 0.2rem 1rem;
-  border-radius: 6px;
+  padding: 0.2rem 0.75rem;
+  border: 1px solid var(--border-retro);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
   font-size: 0.7rem;
   font-weight: 700;
-  display: inline-block;
-  border: 2px solid var(--accent-retro);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-display);
 }
 
-.bio-content-wrapper {
-  border: 2px solid var(--accent-retro);
-  border-radius: 12px;
-  padding: 1.25rem;
-  background: var(--card-paper);
-  margin: 0 1.5rem 1.5rem 1.5rem;
-  box-shadow: 4px 4px 0 var(--accent-retro);
+.bio-text-content {
+  color: var(--ink);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  font-weight: 400;
+  font-family: var(--font-typewriter);
 }
 
-.bio-text {
-  color: var(--ink-light);
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.btn-secondary {
-  background: var(--ink);
-  color: var(--bg-paper);
-  border: 2px solid var(--ink);
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 700;
+.view-work-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  cursor: pointer;
-  transition: var(--transition);
-  font-size: 0.9rem;
+  background: var(--ink);
+  color: var(--card-paper);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-retro);
+  font-size: 0.85rem;
+  font-weight: 700;
   text-transform: uppercase;
-  box-shadow: 4px 4px 0 var(--border-retro);
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+  box-shadow: 2px 2px 5px rgba(155, 126, 99, 0.2);
+  cursor: pointer;
 }
 
-.btn-secondary:hover {
+.view-work-bar:hover {
   background: var(--accent-retro);
-  border-color: var(--accent-retro);
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 4px 4px 8px rgba(155, 126, 99, 0.3);
 }

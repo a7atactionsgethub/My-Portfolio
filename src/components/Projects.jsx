@@ -1,114 +1,90 @@
 import React from 'react';
-import { Download, Github, Box, Palette, TerminalSquare, MonitorPlay } from 'lucide-react';
-import { Link } from 'react-router-dom'; // <-- import Link
+import { Terminal, Palette, MonitorPlay, Box, Coffee, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import '../styles/projects.css';
+import escapePng from '../assets/3dassets/Escape.png';
 
 const Projects = ({ column }) => {
+  // Column 1: Coding repos
   if (column === 1) {
-    // IT / GitHub Repositories
     const repos = [
-      { name: 'aim-reaction-web', tech: 'HTML/JS', desc: 'Aim training web page calculating reaction time', url: 'https://github.com/a7atactionsgethub/aim-reaction-web' },
-      { name: 'F1-live-telemetry', tech: 'Python', desc: 'Real-time Formula 1 data visualization', url: 'https://github.com/a7atactionsgethub/F1-live-telemetry' },
-      { name: 'letter-writing', tech: 'JavaScript', desc: 'Program for creating structured letters', url: 'https://github.com/a7atactionsgethub/letter-writing' }
+      { name: 'aim-reaction-web', tech: 'HTML/CSS', desc: 'Bio tracking and race calculation reaction time.' },
+      { name: 'F1-live-telemetry', tech: 'Python', desc: 'Real-time Formula 1 data visualization.' },
+      { name: 'letter-writing', tech: 'JavaScript', desc: 'Program for creating structured letters.' }
     ];
 
     return (
-      <Link to="/coding" style={{ textDecoration: 'none' }}>
-        <div className="bento-card project-card github-feed">
-          <div className="card-header pb-4">
-            <div className="header-title">
-              <TerminalSquare size={18} />
-              <h4>Coding</h4>
-            </div>
-            <span className="badge">GitHub</span>
-          </div>
-          
-          <div className="repo-list">
-            {repos.map((repo, i) => (
-              <div key={i} className="repo-item">
-                <div className="repo-top">
-                  <h5>{repo.name}</h5>
-                  <span className="lang-dot">{repo.tech}</span>
-                </div>
-                <p>{repo.desc}</p>
+      <div className="bento-card coding-card-retro">
+        <div className="section-header-micro">
+          <Terminal size={14} color="var(--accent-retro)" />
+          <h3 className="section-title-retro">Coding</h3>
+          <span className="coding-badge"><Coffee size={10} /> Coffee</span>
+        </div>
+        <div className="repo-stack-retro">
+          {repos.map((repo, idx) => (
+            <a key={idx} href="#" target="_blank" rel="noreferrer" className="repo-item-retro">
+              <div className="repo-top">
+                <span className="repo-name">{repo.name}</span>
+                <span className="repo-tech-tag">{repo.tech}</span>
               </div>
-            ))}
-          </div>
+              <p className="repo-desc-micro">{repo.desc}</p>
+            </a>
+          ))}
         </div>
-      </Link>
+      </div>
     );
   }
 
+  // Column 2: Graphic Design card
   if (column === 2) {
-    // Graphic Design Showcase
     return (
-      <Link to="/graphic-design" style={{ textDecoration: 'none' }}>
-        <div className="bento-card project-card design-mockup">
-          <div className="card-overlay">
-            <div className="header-title white">
-              <Palette size={18} />
-              <h4>Graphic Design</h4>
-            </div>
-            <p className="subtitle">Visual Identity & UI</p>
+      <Link to="/graphic-design" className="bento-card project-card-v3 design-brand">
+        <div className="card-overlay-v3">
+          <Palette size={18} />
+          <h3 className="card-title-v3">Graphic Design</h3>
+          <p className="card-sub-v3">Visual Identity & UI</p>
+        </div>
+      </Link>
+    );
+  }
+
+  // Column 3: 3D Art card with render image
+  if (column === 3) {
+    return (
+      <Link to="/3d-art" className="bento-card project-card-3d no-padding">
+        <div className="card-3d-content">
+          <div className="card-3d-text">
+            <Box size={16} color="var(--accent-retro)" />
+            <h3 className="card-title-3d">3D Art</h3>
+            <p className="card-sub-3d">Modeling & Renders</p>
           </div>
-          
-          <div className="aesthetic-grid">
-             <div className="g-box g-1"></div>
-             <div className="g-box g-2"></div>
-             <div className="g-box g-3">
-                <div className="g-circle"></div>
-             </div>
+          <div className="card-3d-image">
+            <img src={escapePng} alt="3D Render" />
           </div>
         </div>
       </Link>
     );
   }
 
+  // Column 4: Video Editing / Vlogs & Comms
   if (column === 4) {
-    // Video Editing Showcase
     return (
-      <Link to="/video-editing" style={{ textDecoration: 'none' }}>
-        <div className="bento-card project-card video-mockup">
-          <div className="card-overlay">
-            <div className="header-title white">
-              <MonitorPlay size={18} />
-              <h4>Video Editing</h4>
-            </div>
-            <p className="subtitle">Vlogs & Comms</p>
-          </div>
-          <div className="video-visualizer">
-            <div className="bar b1"></div>
-            <div className="bar b2"></div>
-            <div className="bar b3"></div>
-            <div className="bar b4"></div>
+      <Link to="/video-editing" className="bento-card project-card-v3 video-brand">
+        <div className="video-content-card">
+          <h3 className="card-title-v3">Vlogs & Comms</h3>
+          <div className="video-bars">
+            <div className="v-bar vb1"></div>
+            <div className="v-bar vb2"></div>
+            <div className="v-bar vb3"></div>
+            <div className="v-bar vb4"></div>
+            <div className="v-bar vb5"></div>
           </div>
         </div>
       </Link>
     );
   }
 
-  // Column 3 - 3D Art Showcase (now clickable)
-  return (
-    <div className="col-3-projects">
-      <Link to="/3d-art" style={{ textDecoration: 'none' }}>
-        <div className="bento-card trid-mockup">
-          <div className="card-overlay">
-            <div className="header-title dark">
-              <Box size={18} />
-              <h4>3D Art</h4>
-            </div>
-            <p className="subtitle dark">Modeling & Renders</p>
-          </div>
-          
-          {/* Abstract representation of 3D forms */}
-          <div className="shapes-container">
-            <div className="shape cube"></div>
-            <div className="shape sphere"></div>
-            <div className="shape cylinder"></div>
-          </div>
-        </div>
-      </Link>
-    </div>
-  );
+  return null;
 };
 
 export default Projects;
